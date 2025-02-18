@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Downloads\\reactApp\\dotnet\\DesafioStefanini\\DesafioStefanini.csproj": {}
+    "D:\\Downloads\\reactApp\\dotnet\\DesafioStefanini\\DesafioStefanini\\DesafioStefanini.csproj": {}
   },
   "projects": {
-    "D:\\Downloads\\reactApp\\dotnet\\DesafioStefanini\\DesafioStefanini.csproj": {
+    "D:\\Downloads\\reactApp\\dotnet\\DesafioStefanini\\DesafioStefanini\\DesafioStefanini.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\reactApp\\dotnet\\DesafioStefanini\\DesafioStefanini.csproj",
+        "projectUniqueName": "D:\\Downloads\\reactApp\\dotnet\\DesafioStefanini\\DesafioStefanini\\DesafioStefanini.csproj",
         "projectName": "DesafioStefanini",
-        "projectPath": "D:\\Downloads\\reactApp\\dotnet\\DesafioStefanini\\DesafioStefanini.csproj",
+        "projectPath": "D:\\Downloads\\reactApp\\dotnet\\DesafioStefanini\\DesafioStefanini\\DesafioStefanini.csproj",
         "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\reactApp\\dotnet\\DesafioStefanini\\obj\\",
+        "outputPath": "D:\\Downloads\\reactApp\\dotnet\\DesafioStefanini\\DesafioStefanini\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config"

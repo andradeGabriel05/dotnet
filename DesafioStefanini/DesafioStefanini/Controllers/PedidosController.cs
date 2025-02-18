@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DesafioStefanini.Data;
 using DesafioStefanini.DTO;
 using DesafioStefanini.Models;
+using DesafioStefanini.Services;
 
 namespace DesafioStefanini.Controllers
 {
@@ -16,38 +17,20 @@ namespace DesafioStefanini.Controllers
     public class PedidosController : ControllerBase
     {
         private readonly DesafioStefaniniContext _context;
-
-        public PedidosController(DesafioStefaniniContext context)
+        private readonly PedidosService _pedidosService;
+        
+        public PedidosController(DesafioStefaniniContext context, PedidosService pedidosService)
         {
             _context = context;
+            _pedidosService = pedidosService;
         }
-
+        
         // GET: api/Pedidos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PedidoDTO>>> GetPedido()
         {
-            var pedidos = await _context.Pedido
-                .Include(p => p.ItensPedido)
-                .ThenInclude(ip => ip.Produto)
-                .ToListAsync();
-
-            var pedidosDTO = pedidos.Select(p => new PedidoDTO
-            {
-                Id = p.Id,
-                NomeCliente = p.NomeCliente,
-                EmailCliente = p.EmailCliente,
-                Pago = p.Pago, 
-                ItensPedido = p.ItensPedido.Select(ip => new ItensPedidoDTO
-                {
-                    Id = ip.Id,
-                    IdProduto = ip.ProdutoId,
-                    NomeProduto = ip.Produto.NomeProduto,
-                    ValorUnitario = ip.Produto.Valor,
-                    Quantidade = ip.Quantidade
-                }).ToList()
-            }).ToList();
-
-            return Ok(pedidosDTO);
+            var getPedido = await _pedidosService.GetPedido();
+            return Ok(getPedido);
         }
 
         // GET: api/Pedidos/5
@@ -105,6 +88,7 @@ namespace DesafioStefanini.Controllers
 
             return CreatedAtAction("GetPedido", new { id = pedido.Id }, pedido);
         }
+
 
         // DELETE: api/Pedidos/5
         [HttpDelete("{id}")]
